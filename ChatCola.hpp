@@ -9,10 +9,9 @@
 // ====================================================================
 // PRACTICA EVALUADA 03 - MODELO C (COLA ENLAZADA)
 // Integrantes:
-//   1. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   2. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   3. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   4. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
+//   1. Santiago Zerpa - C.I. V-32451779 - Rol: realizar 3 primeros metodos de ChatCola (encolarMensaje, procesarSiguiente y procesarTodos)
+//   2. Santiago Ruiz - C.I. V-32709123 - Rol: ChatCola (cancelarEnvio, subirPrioridad, bajarPrioridad)
+//   3. Jose Penaloza C.I. V-32597715 - Rol:parte final chatcola
 // ====================================================================
 
 class ChatCola : public Chat
