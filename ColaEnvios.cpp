@@ -1,4 +1,5 @@
 #include "ColaEnvios.hpp"
+#include <fstream>
 
 #include <utility>
 
@@ -53,44 +54,105 @@ ColaEnvios& ColaEnvios::operator=(ColaEnvios&& otra) noexcept
 
 bool ColaEnvios::vacia() const
 {
-    // TODO: completar.
-    return false;
+    if (cantidad == 0)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
 }
 
 std::size_t ColaEnvios::tamanio() const
 {
-    // TODO: completar.
-    return 0;
+    return cantidad;
+    
 }
 
 bool ColaEnvios::encolar(const TextMessage& mensaje)
 {
-    // TODO: completar.
-    (void)mensaje;
-    return false;
+    std::shared_ptr<Nodo> actual = frente_;
+
+    while(actual != nullptr)
+    {
+        if(actual->dato.getId() == mensaje.getId())
+        {
+            return false;
+        }
+
+        actual = actual->siguiente;
+    }
+
+    std::shared_ptr<Nodo> nuevo = std::make_shared<Nodo>(mensaje);
+    if (final_ == nullptr)
+    {
+        final_ = nuevo;
+        frente_= nuevo;
+    }else
+    {
+        final_->siguiente = nuevo;
+        final_= nuevo;
+    }
+
+    cantidad++;
+
+    return true;
+    
 }
 
 bool ColaEnvios::desencolar()
 {
-    // TODO: completar.
-    return false;
+    if(final_ == nullptr)
+    {
+        return false;
+    }
+
+    frente_=frente_->siguiente;
+
+     //En caso de que haya existido solo 1 elemento en la cola y lo hayamos eliminado final tambien debe pasar a apuntar a nullptr
+    if(frente_ == nullptr)
+    {
+        final_ = nullptr;
+    }
+
+    cantidad--;
+
+    return true;
+
+
+   
 }
 
 const TextMessage* ColaEnvios::frente() const
 {
-    // TODO: completar.
-    return nullptr;
+    if(vacia() == true)
+    {
+        return nullptr;
+
+    }else
+    {
+        return &frente_->dato;
+    }
 }
 
 TextMessage* ColaEnvios::frente()
 {
-    // TODO: completar.
-    return nullptr;
+      if(vacia() == true)
+    {
+        return nullptr;
+
+    }else
+    {
+        return &frente_->dato;
+    }
 }
 
 void ColaEnvios::limpiar()
 {
-    // TODO: completar.
+    while(vacia() == true)
+    {
+        desencolar();
+    }
 }
 
 std::vector<TextMessage> ColaEnvios::aVector() const
@@ -141,14 +203,53 @@ void ColaEnvios::invertir()
 
 bool ColaEnvios::guardarCSV(const std::string& ruta) const
 {
-    // TODO: completar.
-    (void)ruta;
-    return false;
+    std::ofstream archivo(ruta);
+
+    if(archivo.is_open() == false)
+    {
+        return false;
+    }
+
+    std::shared_ptr<Nodo> actual = frente_;
+
+    while(actual != nullptr)
+    {
+        archivo << actual->dato.toCSV() << std::endl;
+        
+        actual = actual->siguiente;
+    }
+
+    archivo.close();
+
+    return true;
+    
 }
 
 bool ColaEnvios::cargarCSV(const std::string& ruta)
 {
-    // TODO: completar.
-    (void)ruta;
-    return false;
+    std::ifstream archivo(ruta);
+
+    if(archivo.is_open() == false)
+    {
+        return false;
+    }
+
+    limpiar();
+    std::string linea;
+
+    while(std::getline(archivo,linea))
+    {
+        if(linea.empty())
+        {
+            continue;
+        }
+
+        TextMessage Mensaje = TextMessage::fromCSV(linea);
+        encolar(Mensaje);
+    }
+
+    archivo.close();
+
+    return true;
+    
 }
