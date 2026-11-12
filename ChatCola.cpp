@@ -48,25 +48,26 @@ std::size_t ChatCola::procesarTodos()
     return procesados;
 }
 
+// Autor: Santiago Ruiz (C.I. V-32709123)
 bool ChatCola::cancelarEnvio(int id)
 {
-    // TODO: completar.
-    (void)id;
-    return false;
+    // solo afecta a mensajes que siguen pendientes en la cola;
+    // si el id ya fue enviado (o no existe) la cola retorna false
+    return pendientes.cancelar(id);
 }
 
+// Autor: Santiago Ruiz (C.I. V-32709123)
 bool ChatCola::subirPrioridad(int id)
 {
-    // TODO: completar.
-    (void)id;
-    return false;
+    // mueve el mensaje pendiente al frente, sin cambiar su estado
+    return pendientes.moverAlFrente(id);
 }
 
+// Autor: Santiago Ruiz (C.I. V-32709123)
 bool ChatCola::bajarPrioridad(int id)
 {
-    // TODO: completar.
-    (void)id;
-    return false;
+    // mueve el mensaje pendiente al final, sin cambiar su estado
+    return pendientes.moverAlFinal(id);
 }
 
 const TextMessage* ChatCola::siguientePendiente() const
@@ -77,13 +78,13 @@ const TextMessage* ChatCola::siguientePendiente() const
 std::size_t ChatCola::cantidadPendientes() const
 {
     
-    return pendientes tamanio;
+    return pendientes.tamanio();
 }
 
 std::size_t ChatCola::cantidadEnviados() const
 {
     
-    return enviados.size;
+    return enviados.size();
 }
 
 const std::vector<TextMessage>& ChatCola::getEnviados() const
