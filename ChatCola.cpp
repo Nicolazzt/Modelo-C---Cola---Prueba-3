@@ -8,7 +8,7 @@
 //   1. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
 //   2. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
 //   3. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   4. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
+//   4. Nombre y Apellido - Jose Peñaloza C.I. V-32597715 - Rol:parte final chatcola
 // ====================================================================
 // Completen la integracion de la cola con el chat.
 // ====================================================================
@@ -65,14 +65,14 @@ const TextMessage* ChatCola::siguientePendiente() const
 
 std::size_t ChatCola::cantidadPendientes() const
 {
-    // TODO: completar.
-    return 0;
+    
+    return pendientes tamanio;
 }
 
 std::size_t ChatCola::cantidadEnviados() const
 {
-    // TODO: completar.
-    return 0;
+    
+    return enviados.size;
 }
 
 const std::vector<TextMessage>& ChatCola::getEnviados() const
@@ -87,7 +87,13 @@ const ColaEnvios& ChatCola::getPendientes() const
 
 const TextMessage* ChatCola::buscarEnviado(int id) const
 {
-    // TODO: completar.
-    (void)id;
+    
+      for(const auto&message :enviados){
+
+        if(message.getId() == id){
+
+            return&message;
+        }
+    }
     return nullptr;
 }
