@@ -32,4 +32,4 @@ Estos tres metodos dependen de que `cancelar`, `moverAlFrente` y `moverAlFinal` 
 ## Uso de IA
 
 - **Santiago Ruiz:** **Claude (Anthropic)** ayudó a Santiago Ruiz a escribir `cancelarEnvio`, `subirPrioridad` y `bajarPrioridad` en `ChatCola.cpp`, a completar sus datos en el encabezado y a redactar esta seccion del README. El codigo fue revisado y comprendido por el autor.
-- **Nicolas Lopez:** **Claude y Gemini** Ayudaron a verificar uso y funcionamiento de std::shared_ptr y para aprender el uso de la sintaxis para archivos CSV (aprender a usar los metodos de la librería fstream)
+- **Nicolas Lopez:** **Claude y Gemini** Ayudaron a verificar uso y funcionamiento de std::shared_ptr y para aprender el uso de la sintaxis para archivos CSV (aprender a usar los metodos de la librería fstream) en `ColaEnvios.cpp`
