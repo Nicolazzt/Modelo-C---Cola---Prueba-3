@@ -17,7 +17,7 @@ make clean
 | Santiago Zerpa | V-32451779 | ChatCola: encolarMensaje, procesarSiguiente, procesarTodos |
 | Santiago Ruiz | V-32709123 | ChatCola: cancelarEnvio, subirPrioridad, bajarPrioridad |
 | Nicolas Lopez | V-30024260 | ColaEnvios: encolar, desencolar, vaciar, tamanio, guardarCSV, cargarCSV, limpiar y frente |
-| (completar) | | ColaEnvios |
+| Diego Lopez | V-32451137 | ColaEnvios: constructor de copia, operator= de copia, constructor de movimiento y operator= de movimiento |
 | (completar) | | ColaEnvios |
 | (completar) | | ColaEnvios |
 
@@ -33,3 +33,6 @@ Estos tres metodos dependen de que `cancelar`, `moverAlFrente` y `moverAlFinal` 
 
 - **Santiago Ruiz:** **Claude (Anthropic)** ayudó a Santiago Ruiz a escribir `cancelarEnvio`, `subirPrioridad` y `bajarPrioridad` en `ChatCola.cpp`, a completar sus datos en el encabezado y a redactar esta seccion del README. El codigo fue revisado y comprendido por el autor.
 - **Nicolas Lopez:** **Claude y Gemini** Ayudaron a verificar uso y funcionamiento de std::shared_ptr y para aprender el uso de la sintaxis para archivos CSV (aprender a usar los metodos de la librería fstream) en `ColaEnvios.cpp`
+- **Diego Lopez:** **Claude (Anthropic)** explicó a Diego cómo funcionan los
+constructores de copia y movimiento de ColaEnvios y revisó su código.
+Diego escribió los 4 métodos en ColaEnvios.cpp y puede explicarlos.
