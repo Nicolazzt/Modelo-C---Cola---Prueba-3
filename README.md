@@ -21,14 +21,6 @@ make clean
 | (completar) | | ColaEnvios |
 | (completar) | | ColaEnvios |
 
-## Aporte de Santiago Ruiz (ChatCola.cpp)
-
-- `cancelarEnvio(int id)`: delega en `ColaEnvios::cancelar`. Solo afecta mensajes pendientes; retorna `false` si el id no esta en la cola (por ejemplo, si ya fue enviado).
-- `subirPrioridad(int id)`: delega en `ColaEnvios::moverAlFrente`. No cambia el estado del mensaje.
-- `bajarPrioridad(int id)`: delega en `ColaEnvios::moverAlFinal`. No cambia el estado del mensaje.
-
-Estos tres metodos dependen de que `cancelar`, `moverAlFrente` y `moverAlFinal` esten implementados en `ColaEnvios.cpp`.
-
 ## Uso de IA
 
 - **Santiago Ruiz:** **Claude (Anthropic)** ayudó a Santiago Ruiz a escribir `cancelarEnvio`, `subirPrioridad` y `bajarPrioridad` en `ChatCola.cpp`, a completar sus datos en el encabezado y a redactar esta seccion del README. El codigo fue revisado y comprendido por el autor.
