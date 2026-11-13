@@ -149,7 +149,7 @@ TextMessage* ColaEnvios::frente()
 
 void ColaEnvios::limpiar()
 {
-    while(vacia() == true)
+    while(vacia() == false)
     {
         desencolar();
     }
