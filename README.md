@@ -14,12 +14,12 @@ make clean
 
 | Integrante | C.I. | Rol |
 | :--- | :--- | :--- |
-| Santiago Zerpa | V-32451779 | ChatCola: encolarMensaje, procesarSiguiente, procesarTodos |
-| Santiago Ruiz | V-32709123 | ChatCola: cancelarEnvio, subirPrioridad, bajarPrioridad |
-| Nicolas Lopez | V-30024260 | ColaEnvios: encolar, desencolar, vaciar, tamanio, guardarCSV, cargarCSV, limpiar y frente |
+| Santiago Zerpa | V-32451779 | ChatCola: encolarMensaje(), procesarSiguiente(), procesarTodos() |
+| Santiago Ruiz | V-32709123 | ChatCola: cancelarEnvio(), subirPrioridad(), bajarPrioridad() |
+| Nicolas Lopez | V-30024260 | ColaEnvios: encolar(), desencolar(), vaciar(), tamanio(), guardarCSV(), cargarCSV(), limpiar(), frente() const, frente()  |
 | Diego Lopez | V-32451137 | ColaEnvios: constructor de copia, operator= de copia, constructor de movimiento y operator= de movimiento |
-| (completar) | | ColaEnvios |
-| (completar) | | ColaEnvios |
+| José Peñaloza | V-32597715 | ChatCola:buscarEnviado() , getPendientes(), getEnviados(),cantidadEnviados(),cantidadPendientes() ,siguientePendiente()  |
+| Reyner Quintero | V-32591935 | ColaEnvios: aVector(), buscarPorId() const, buscarPorId(), cancelar(),moverAlFrente(),moverAlFinal()|
 
 ## Uso de IA
 
