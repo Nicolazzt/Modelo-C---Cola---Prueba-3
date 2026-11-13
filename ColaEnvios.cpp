@@ -26,28 +26,79 @@ ColaEnvios::ColaEnvios()
 ColaEnvios::ColaEnvios(const ColaEnvios& otra)
     : frente_(nullptr), final_(nullptr), cantidad(0)
 {
-    // TODO: completar.
-    (void)otra;
+    std::shared_ptr<Nodo> actual = otra.frente_;
+    while (actual != nullptr)
+    {
+        std::shared_ptr<Nodo> nuevo = std::make_shared<Nodo>(actual->dato);
+
+        if(final_ == nullptr)
+        {
+            frente_= nuevo;
+            final_= nuevo;
+        }
+        else
+        {
+            final_->siguiente= nuevo;
+            final_= nuevo;
+        }
+
+        cantidad++;
+        actual = actual->siguiente;
+    }
 }
 
 ColaEnvios& ColaEnvios::operator=(const ColaEnvios& otra)
 {
-    // TODO: completar.
-    (void)otra;
+    if (this !=&otra)
+    {
+        limpiar();
+
+    std::shared_ptr<Nodo> actual = otra.frente_;
+    while (actual != nullptr)
+    {
+        std::shared_ptr<Nodo> nuevo = std::make_shared<Nodo>(actual->dato);
+
+        if(final_ == nullptr)
+        {
+            frente_= nuevo;
+            final_= nuevo;
+        }
+        else
+        {
+            final_->siguiente= nuevo;
+            final_= nuevo;
+        }
+
+        cantidad++;
+        actual = actual->siguiente;
+    }
+    }
     return *this;
 }
 
 ColaEnvios::ColaEnvios(ColaEnvios&& otra) noexcept
-    : frente_(nullptr), final_(nullptr), cantidad(0)
+    : frente_(otra.frente_), final_(otra.final_), cantidad(otra.cantidad)
 {
-    // TODO: completar.
-    (void)otra;
+    
+    otra.frente_ = nullptr;
+    otra.final_ = nullptr;
+    otra.cantidad = 0;
 }
 
 ColaEnvios& ColaEnvios::operator=(ColaEnvios&& otra) noexcept
 {
-    // TODO: completar.
-    (void)otra;
+    if (this != &otra)
+    {
+        limpiar();
+
+        frente_=otra.frente_;
+        final_=otra.final_;
+        cantidad= otra.cantidad;
+
+        otra.frente_=nullptr;
+        otra.final_=nullptr;
+        otra.cantidad=0;
+    }
     return *this;
 }
 
