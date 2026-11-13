@@ -6,10 +6,9 @@
 // ====================================================================
 // PRACTICA EVALUADA 03 - MODELO C (COLA ENLAZADA)
 // Integrantes:
-//   1. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   2. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   3. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
-//   4. Nombre y Apellido - C.I. V-XXXXXXXX - Rol:
+//   1. Nicolas Lopez - C.I. V-30024260 - Rol: ColaEnvios (encolar, desencolar, vaciar, tamanio, guardarCSV, cargarCSV, limpiar, frente)
+//   2. Diego Lopez - C.I. V-32451137 - Rol: ColaEnvios (constructor de copia, operator= de copia, constructor de movimiento, operator= de movimiento)
+//   3. Alejandro Pena - C.I. V-32591935 - Rol: ColaEnvios (aVector, buscarPorId x2, cancelar, moverAlFrente, moverAlFinal, invertir)
 // ====================================================================
 // Completen la implementacion de esta estructura.
 // ====================================================================
